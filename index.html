@@ -1,48 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Phishing URL Detector</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
+    <title>Phishing URL Detector – Advanced</title>
+    <meta
+      name="description"
+      content="Advanced phishing URL detector with heuristics, VirusTotal, and Google Safe Browsing integration."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Phishing URL Detector</h1>
-        <p class="subtitle">Check if a link is safe before you click it</p>
+      <h1>Phishing URL Detector</h1>
+      <p class="subtitle">
+        Advanced check with heuristics + VirusTotal &amp; Google Safe Browsing
+      </p>
 
-        <form id="urlForm">
-            <div class="input-group">
-                <label for="urlInput">Enter suspicious URL</label>
-                <input type="url" id="urlInput" placeholder="https://example.com/login" required autocomplete="off" />
-            </div>
-
-            <button type="submit" id="checkBtn">Check URL</button>
-        </form>
-
-        <div id="result"></div>
-        <div id="loading" class="loading" style="display: none;">Analyzing URL...</div>
-
-        <div class="features">
-            <p>Currently checking for:</p>
-            <ul>
-                <li>HTTPS</li>
-                <li>Suspicious TLDs</li>
-                <li>URL length</li>
-                <li>IP address usage</li>
-                <li>Special characters</li>
-                <li>Look-alike domains</li>
-            </ul>
+      <form id="urlForm">
+        <div class="input-group">
+          <label for="urlInput">Paste suspicious URL</label>
+          <input
+            type="url"
+            id="urlInput"
+            placeholder="https://example.com/login"
+            required
+            autocomplete="off"
+          />
         </div>
+        <button type="submit" id="checkBtn">Analyze URL</button>
+      </form>
+
+      <div id="loading" class="loading">
+        Analyzing... (may take 5–12 seconds due to APIs)
+      </div>
+
+      <div id="result"></div>
+
+      <div class="api-info">
+        Powered by local heuristics +
+        <a href="https://www.virustotal.com" target="_blank">VirusTotal</a>,
+        <a href="https://developers.google.com/safe-browsing" target="_blank"
+          >Google Safe Browsing</a
+        ><br />
+        Get your free API keys and replace the placeholders in
+        <code>script.js</code>.
+      </div>
+
+      <div class="features">
+        <p>Checks include:</p>
+        <ul>
+          <li>HTTPS &amp; protocol</li>
+          <li>Typosquatting (Levenshtein)</li>
+          <li>Domain entropy</li>
+          <li>Suspicious TLDs / subdomains</li>
+          <li>IP instead of domain</li>
+          <li>VirusTotal reputation</li>
+          <li>Google Safe Browsing</li>
+        </ul>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
