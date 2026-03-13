@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phishing URL Detector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Phishing URL Detector</h1>
+        <p class="subtitle">Check if a link is safe before you click it</p>
+
+        <form id="urlForm">
+            <div class="input-group">
+                <label for="urlInput">Enter suspicious URL</label>
+                <input type="url" id="urlInput" placeholder="https://example.com/login" required autocomplete="off" />
+            </div>
+
+            <button type="submit" id="checkBtn">Check URL</button>
+        </form>
+
+        <div id="result"></div>
+        <div id="loading" class="loading" style="display: none;">Analyzing URL...</div>
+
+        <div class="features">
+            <p>Currently checking for:</p>
+            <ul>
+                <li>HTTPS</li>
+                <li>Suspicious TLDs</li>
+                <li>URL length</li>
+                <li>IP address usage</li>
+                <li>Special characters</li>
+                <li>Look-alike domains</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
